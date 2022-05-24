@@ -1,27 +1,47 @@
-# CyptoExchanger
+# Cypto Exchanger
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+A built with angular client to enable sending the crypto currency over an ethereum block chain
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The app uses browser installed meta mask wallet to be able to connect the app with the use wallet.
 
-## Code scaffolding
+On successfully connection of the wallet the user can initiate the crypto transaction.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Currently the app supports Ethereum, to be able to send some cryptos you need to know the receiver account id.
 
-## Build
+The service connects to already deployed **smart contract** to be able to interact with the ethereum blockchain.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The smart contract id is saved in the app's environment.
 
-## Running unit tests
+Finnaly the app logs on ui the transaction records
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Pre-requisites
 
-## Running end-to-end tests
+### Running the app as an end user
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [Meta Mask](https://metamask.io/)
 
-## Further help
+You [Meta Mask](https://metamask.io/) wallet should have the accounts with few ethereum to use in testing.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+### Running the app as a developer
+
+- Nodejs
+- [Meta Mask](https://metamask.io/)
+- Angular v8+
+
+
+## LICENSE
+
+The work is LICENSED by [MIT](https://github.com/PatrickNiyogitare28/cypto-exchanger/blob/master/LICENSE)
+## Maintainer
+
+[Patrick Niyogitare](https://twitter.com/niyogitare)
+
+Shoot me an email on patrickniyogitare28@gmail.com
+
+
+
+
+
