@@ -9,6 +9,7 @@ import { CryptoWalletService } from 'src/app/services/crypto-wallet.service';
 export class LandingComponent implements OnInit {
 
   public account: string | false = false;
+  public showModal: boolean = false;
 
   constructor(private readonly cryptoWalletService: CryptoWalletService) { }
 
@@ -23,7 +24,9 @@ export class LandingComponent implements OnInit {
     this.account = accounts[0];
   }
 
-
+  public onShowModal = async () => {
+    this.showModal = !(this.showModal);
+  }
 
   ngOnInit(): void {
     this.getEthereumAccounts();
