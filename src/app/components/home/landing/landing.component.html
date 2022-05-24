@@ -7,7 +7,14 @@
         <div class="w-[60%]">
             <h1 class="text-[4em] text-center text-white font-extrabold">Next Generation Crypto Trading</h1>
             <div class="w-full flex justify-around mt-10">
-                <button class="bg-switchColor text-white p-4 rounded-full w-[60%]">CONNECT WALLET</button>
+                <button class="bg-switchColor text-white p-4 rounded-full w-[60%]"
+                *ngIf="!account"
+                (click)="onConnectWallet()"
+                >CONNECT WALLET</button>
+
+                <button class="bg-switchColor text-white p-4 rounded-full w-[60%]"
+                *ngIf="account"
+                >SEND ETHEREUM</button>
             </div>
 
             <div class="flex justify-around mt-20">
