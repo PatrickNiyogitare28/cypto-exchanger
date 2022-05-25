@@ -1,4 +1,4 @@
-<div class="min-h-[100vh]  px-[15%] gradient-bg-transactions">
+<div class="min-h-[100vh]  px-[15%] py-[5%] gradient-bg-transactions">
     <div class="flex w-[75%] justify-between">
         <div class="mt-[10%]">
             <img src="../../../../assets/images/Monero-1.png" >
@@ -9,7 +9,9 @@
     </div>
 
     <div class="w-full white-glassmorphism mt-[5%]">
-        <table class="w-full p-4 table-auto border-separate table">
+        <p *ngIf="transactions.length === 0" class="p-[2em] text-red-500">No transactions yet</p>
+
+        <table class="w-full p-4 table-auto border-separate table" *ngIf="transactions.length > 0" >
             <thead class="">
                 <tr class="p-4 gap-2 text-white text-sm">
                     <th>Account</th>
@@ -19,42 +21,15 @@
                     <th>Transaction status</th>
                 </tr>
                 </thead>
-            <tbody class="text-gray-400 text-[11px]" *ngFor="let transaction of transactions; let i = index">
-                <tr>
-                    <th>{{transaction.addressTo}}</th>
-                    <th>{{transaction.amount}} ETH</th>
-                    <th>{{transaction.timeStamp}}</th>
-                    <th>{{transaction.keyword}}</th>
-                    <th> <span class="bg-green-500 text-white py-3 px-10  rounded-full">Success</span></th>
+                <p *ngIf="transactions.length === 0">No transactions yet</p>
+                <tbody class="text-gray-400 text-[11px]" *ngFor="let transaction of transactions; let i = index">
+                    <tr>
+                    <td class="text-center">{{transaction.addressTo}}</td>
+                    <td class="text-center">{{transaction.amount}} ETH</td>
+                    <td class="text-center">{{transaction.timeStamp}}</td>
+                    <td class="text-center">{{transaction.keyword}}</td>
+                    <td class="text-center"> <span class="bg-green-500 text-white py-3 px-10  rounded-full">Success</span></td>
                 </tr>
-                <!-- <tr>
-                    <th>0x8c0...A096</th>
-                    <th>0.04 ETH</th>
-                    <th>11 Feb</th>
-                    <th>Send Eths</th>
-                    <th> <span class="bg-green-500 text-white py-3 px-10  rounded-full">Success</span></th>
-                </tr>
-                <tr>
-                    <th>0x8c0...A096</th>
-                    <th>0.04 ETH</th>
-                    <th>11 Feb</th>
-                    <th>Send Eths</th>
-                    <th> <span class="bg-green-500 text-white py-3 px-10  rounded-full">Success</span></th>
-                </tr>
-                <tr>
-                    <th>0x8c0...A096</th>
-                    <th>0.04 ETH</th>
-                    <th>11 Feb</th>
-                    <th>Send Eths</th>
-                    <th> <span class="bg-green-500 text-white py-3 px-10  rounded-full">Success</span></th>
-                </tr>
-                <tr>
-                    <th>0x8c0...A096</th>
-                    <th>0.04 ETH</th>
-                    <th>11 Feb</th>
-                    <th>Send Eths</th>
-                    <th> <span class="bg-green-500 text-white py-3 px-10  rounded-full">Success</span></th>
-                </tr> -->
             </tbody>
         </table>
     </div>

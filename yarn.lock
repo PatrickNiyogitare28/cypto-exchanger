@@ -1594,6 +1594,20 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@ngneat/hot-toast@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@ngneat/hot-toast/-/hot-toast-4.1.0.tgz#8c0cf5be445254678b782e612f4e8840bf2c8974"
+  integrity sha512-5QgxYXAGNmg0J10QjHOBu8Go5SZ9WIg5TDFm60ecMK/BUcuaHB7QeVfY/YFUPsw1iXaO3IVb81w9LdqXz2GNsg==
+  dependencies:
+    tslib "^2.3.0"
+
+"@ngneat/overview@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@ngneat/overview/-/overview-2.0.2.tgz#557dbb801e8b3e42d3cda57f5feb79319ef2f120"
+  integrity sha512-BARS4lUrWW5BidZS6jKtZc3okV7ro+3QKxJKs1FgeDDSomNdNACEjB0BMITeulEQ+agE4n9U+sbGpF2guOXDQA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@13.3.6":
   version "13.3.6"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-13.3.6.tgz#98c9c830d1a4367a51593b1f12ca28b096b740ad"
@@ -2063,6 +2077,11 @@ acorn@^8.4.1, acorn@^8.5.0:
   version "8.7.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
   integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==
 
 adjust-sourcemap-loader@^4.0.0:
   version "4.0.0"
@@ -6673,7 +6692,7 @@ tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.1.0, tslib@^2.3.0:
+tslib@^2.0.0, tslib@^2.1.0, tslib@^2.3.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
