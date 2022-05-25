@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import abi from 'src/app/utils/transaction.json';
 import { ethers } from 'ethers';
+import { Transaction } from '../types/transaction';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +21,6 @@ export class CryptoWalletService {
     try{
       if(!this.ethereum) return alert("Please install meta mask");
       const accounts = await this.ethereum.request({method: 'eth_requestAccounts'});
-      console.log(accounts);
     }
     catch(e){
       throw new Error("No ethereum object")
@@ -65,12 +65,28 @@ export class CryptoWalletService {
       }
       const transactionContract:any = this.getEthereumContract();
       const transactions = await transactionContract.getAllTransactions();
-      console.log("Transactions ... "+JSON.stringify(transactions));
       return transactions;
     }
     catch(e){
-      console.log(e);
       return [];
     } 
+  }
+
+  public sendTransaction = async ({addressTo, amount, keyword, message}: Transaction) : Promise<boolean> => {
+    const transactionContract:any = this.getEthereumContract();
+    const passedAmount  = ethers.utils.parseEther(amount.toString());
+    const accounts = await this.checkWalletConnection();
+    const currentAcccount = accounts[0];
+    await this.ethereum.request({
+      method: 'eth_sendTransaction',
+      params: [{
+        from: currentAcccount,
+        to: addressTo,
+        gas: '0x5208',
+        value: passedAmount._hex
+      }]
+    })
+   const transactionHash = await transactionContract.addToBlockChain(addressTo, passedAmount, message, keyword);
+   return true;
   }
 }

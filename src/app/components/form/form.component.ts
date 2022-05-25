@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Transaction } from 'src/app/types/transaction';;
+import { CryptoWalletService } from 'src/app/services/crypto-wallet.service';
 
 @Component({
   selector: 'app-form',
@@ -8,7 +10,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  loading: boolean = false;
+
+  constructor(private readonly cryptoWalletService: CryptoWalletService) { }
 
   public form = {
      addressTo: {
@@ -37,10 +41,15 @@ export class FormComponent implements OnInit {
   }
 
   public onSubmit = () => {
-    console.log(this.addressTo.value)
-    console.log(this.amount.value)
-    console.log(this.keyword.value)
-    console.log(this.message.value)
+    const data: Transaction  = {
+      addressTo: this.addressTo.value,
+      amount: this.amount.value,
+      keyword: this.keyword.value,
+      message: this.message.value
+    }
+    this.loading = true;
+    const transaction = this.cryptoWalletService.sendTransaction(data)
+    this.loading = false;
   }
   ngOnInit(): void {
   }
