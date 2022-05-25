@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +12,8 @@ export class FormComponent implements OnInit {
 
   public form = {
      addressTo: {
-       placeholder: 'Address to'
+       placeholder: 'Address to',
+       value: ''
      },
      amount: {
        placeholder:'Amount (ETH)'
@@ -24,11 +26,22 @@ export class FormComponent implements OnInit {
      }
   };
 
+  addressTo: FormControl = new FormControl('');
+  amount: FormControl = new FormControl('');
+  keyword: FormControl = new FormControl('');
+  message: FormControl = new FormControl('');
+
   @Output() triggerAlert: EventEmitter<string> = new EventEmitter();
   closeAlert(){
     this.triggerAlert.emit();
   }
 
+  public onSubmit = () => {
+    console.log(this.addressTo.value)
+    console.log(this.amount.value)
+    console.log(this.keyword.value)
+    console.log(this.message.value)
+  }
   ngOnInit(): void {
   }
 

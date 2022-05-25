@@ -4,6 +4,7 @@ import { NavComponent } from './nav/nav.component';
 import { LandingComponent } from './home/landing/landing.component';
 import { FormComponent } from './form/form.component';
 import { InputComponent } from './elements/input/input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { InputComponent } from './elements/input/input.component';
     InputComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     NavComponent,
