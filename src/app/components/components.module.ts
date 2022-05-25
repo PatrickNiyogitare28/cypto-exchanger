@@ -6,6 +6,7 @@ import { FormComponent } from './form/form.component';
 import { InputComponent } from './elements/input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransactionsComponent } from './home/transactions/transactions.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -15,7 +16,8 @@ import { TransactionsComponent } from './home/transactions/transactions.componen
     LandingComponent,
     FormComponent,
     InputComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { TransactionsComponent } from './home/transactions/transactions.componen
   exports: [
     NavComponent,
     LandingComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    FooterComponent
   ]
 })
 export class ComponentsModule { }

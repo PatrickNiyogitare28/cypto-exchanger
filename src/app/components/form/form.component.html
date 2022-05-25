@@ -31,7 +31,8 @@
                     ></app-input>
                 </div>
                 <div class="my-10">
-                    <button class="p-4 bg-switchColor text-white w-full rounded-full" (click)="onSubmit()">SEND</button>
+                    <button class="p-4 bg-switchColor text-white w-full rounded-full" *ngIf="!loading" (click)="onSubmit()">SEND</button>
+                    <button class="p-4 bg-switchColor text-white w-full rounded-full" *ngIf="loading" >SENDING ...</button>
                 </div>
             </form>
         </div>
