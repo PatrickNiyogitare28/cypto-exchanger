@@ -5,29 +5,33 @@
         </div>
 
         <div class="py-[5%] px-[10%]">
-            <form>
+            <form onsubmit="event.preventDefault()">
                 <div class="mt-2">
                     <app-input
                      [placeholder]=form.addressTo.placeholder
+                     [formControl]="addressTo"
                     ></app-input>
                 </div>
                 <div class="mt-6">
                     <app-input
                     [placeholder]=form.amount.placeholder
+                    [formControl]="amount"
                     ></app-input>
                 </div>
                 <div class="mt-6">
                     <app-input
                     [placeholder]=form.keyword.placeholder
+                    [formControl]="keyword"
                     ></app-input>
                 </div>
                 <div class="mt-6">
                     <app-input
                     [placeholder]=form.message.placeholder
+                    [formControl]="message"
                     ></app-input>
                 </div>
                 <div class="my-10">
-                    <button class="p-4 bg-switchColor text-white w-full rounded-full">SEND</button>
+                    <button class="p-4 bg-switchColor text-white w-full rounded-full" (click)="onSubmit()">SEND</button>
                 </div>
             </form>
         </div>

@@ -28,8 +28,13 @@ export class LandingComponent implements OnInit {
     this.showModal = !(this.showModal);
   }
 
+  public getTransactions = async () => {
+    this.cryptoWalletService.getAllTransactions();
+  }
+
   ngOnInit(): void {
     this.getEthereumAccounts();
+    this.getTransactions();
   }
 
 }
