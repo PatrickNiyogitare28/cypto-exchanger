@@ -21,10 +21,10 @@
                 </thead>
             <tbody class="text-gray-400 text-[11px]" *ngFor="let transaction of transactions; let i = index">
                 <tr>
-                    <th>0x8c0...A096</th>
-                    <th>0.04 ETH</th>
-                    <th>11 Feb</th>
-                    <th>Send Eths</th>
+                    <th>{{transaction.addressTo}}</th>
+                    <th>{{transaction.amount}} ETH</th>
+                    <th>{{transaction.timeStamp}}</th>
+                    <th>{{transaction.keyword}}</th>
                     <th> <span class="bg-green-500 text-white py-3 px-10  rounded-full">Success</span></th>
                 </tr>
                 <!-- <tr>
