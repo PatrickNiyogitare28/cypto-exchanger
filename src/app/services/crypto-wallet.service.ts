@@ -57,15 +57,20 @@ export class CryptoWalletService {
   }
 
 
-  public getAllTransactions = async () => {
+  public getAllTransactions = async (): Promise<Array<any>> => {
     try{
-      if(!this.ethereum) return alert("Please install meta mask");
+      if(!this.ethereum){
+        alert("Please install meta mask");
+        return [];
+      }
       const transactionContract:any = this.getEthereumContract();
       const transactions = await transactionContract.getAllTransactions();
       console.log("Transactions ... "+JSON.stringify(transactions));
+      return transactions;
     }
     catch(e){
-      console.log(e)
+      console.log(e);
+      return [];
     } 
   }
 }
